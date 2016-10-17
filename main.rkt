@@ -49,7 +49,7 @@
 ; String -> String
 (define (get-url str)
   (string-trim (bytes->string/utf-8
-    (port->bytes (get-pure-port (string->url str))))))
+    (port->bytes (get-pure-port (string->url str) #:redirections 5)))))
 
 ; ----- Provides -----
 
